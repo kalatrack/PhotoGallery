@@ -1,31 +1,23 @@
 <?php
-	$file = 'filename.html';
-	if($handle = fopen($file, 'w+r+x')){
-		$contents =' kkkk\n tun sy 
-			\nlol g ';
-		fwrite($handle, $contents);
-		
-	}else{
-		echo "could not open this files.";
-	}
-		
-if($size = file_put_contents($file, $contents)){
-	echo "the size of file is {$size} byte. ";
-}else 'some the goes wrong.';
-$pos = ftell($handle);
-fseek($handle, $pos-5);
-fwrite($handle, 'string to make');
-rewind($handle);
-fwrite($handle, 'string this is form the start and get next to .');fclose($handle);
-$a = dirname(__FILE__);echo "<br>";
-echo "<a href={$file}>file bane</a>";
+	echo "Permission on filesystem in PHP .<br>";echo "<br>";
 
 
-// if(fclose($handle)){
-// 	unlink($file);
 
-// }else "you are not able to do it";
 echo "<br>";
+echo "This Example of Special Constant. That are Used to Identify Directory You might aspect.";echo "<br>";
+echo __FILE__ ; echo "<br>";
+echo __LINE__;echo "<br>";
+echo dirname(__FILE__);echo "<br>";
+echo __DIR__;echo "<br>";
+echo "<br>";
+echo file_exists(__FILE__)? 'Yes':"NO";echo "<br>";//it is telling us the file in which we are working with full path 
+echo file_exists(dirname(__FILE__)."/basic.php")? 'Yes' : 'NO';echo "<br>";//this is also telling us path and file existing
+echo is_file(__FILE__)? ' Yes': 'no';echo "<br>";//it is taking about directory that we are given and file inside it's also true
+echo is_file(dirname(__FILE__)."/basic.php")? 'yes':'no';echo "<br>";//it is also true
+echo is_dir(__FILE__)? 'yes':'no';echo "<br>";echo "//it is false in this case file is avalie not directory we are one step next about condition and same directory where file exist<br>";
+echo is_dir(dirname(__FILE__)."/basic.php")? 'yes': 'no';echo "<br>";echo " // the above case and this case are same .  ";
+echo is_dir(dirname(__FILE__))? 'yes':'no' ;echo "<br>"; echo "  // in this case it will be a directory and next of this main file exist .";
 
+echo is_dir('..')? 'yes':'no';echo "<br>"; echo "  // this case is saimple this telling us one step backword from the main file .";
 
 ?>
