@@ -1,4 +1,30 @@
 <?php
+	echo "Reading files of specific directory form the directory path .. <br>";
+	$dir = ".";
+	$a = 0;
+	if(is_dir($dir)){
+		if($handle = opendir($dir)){
+				while($filename = readdir($handle)){
+		
+					echo "FileName is ".$a++." : {$filename} :<br>";
+					//$a++;
+				}
+			closedir($handle);	
+		}
+	}
+	echo "<hr>";
+	$b=0;
+		if(is_dir($dir)){
+			$dir_array = scandir($dir);
+			foreach($dir_array as $file){
+				if(stripos($file, '.')>0){
+								echo "fileName ".$b++." : {$file}<br>";
+							}
+			}		
+	}
+
+
+echo "<hr>";
 	echo "Permission on filesystem in PHP .<br>";echo "<br>";
 
 
