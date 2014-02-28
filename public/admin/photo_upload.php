@@ -3,6 +3,7 @@ require_once('../../includes/initialize.php');
 if (!$session->is_logged_in()) { redirect_to("login.php"); }
 ?>
 <?php
+    $message = '';
 	$max_file_size = 1048576;   // expressed in bytes
 	                            //     10240 =  10 KB
 	                            //    102400 = 100 KB
@@ -29,7 +30,7 @@ if (!$session->is_logged_in()) { redirect_to("login.php"); }
 
 	<h2>Photo Upload</h2>
 
-	<?php echo output_message($message=''); ?>
+	<?php echo output_message($message); ?>
   <form action="photo_upload.php" enctype="multipart/form-data" method="POST">
     <input type="hidden" name="MAX_FILE_SIZE" value="<?php echo $max_file_size; ?>" />
     <p><input type="file" name="file_upload" /></p>

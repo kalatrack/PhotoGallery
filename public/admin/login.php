@@ -4,7 +4,7 @@ require_once("../../includes/initialize.php");
 if($session->is_logged_in()) {
   redirect_to("index.php");
 }
-
+$message = '';
 // Remember to give your form's submit tag a name="submit" attribute!
 if (isset($_POST['submit'])) { // Form has been submitted.
 
@@ -32,7 +32,7 @@ if (isset($_POST['submit'])) { // Form has been submitted.
 <?php include_layout_template('admin_header.php'); ?>
 
 		<h2>Staff Login</h2>
-		<?php echo output_message($message=''); ?>
+		<?php echo output_message($message); ?>
 
 		<form action="login.php" method="post">
 		  <table>

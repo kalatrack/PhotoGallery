@@ -1,6 +1,7 @@
 <?php require_once("../../includes/initialize.php"); ?>
 <?php if (!$session->is_logged_in()) { redirect_to("login.php"); } ?>
 <?php
+    $message = '';
 	if(empty($_GET['id'])) {
 	  $session->message("No photograph ID was provided.");
 	  redirect_to('index.php');
@@ -22,7 +23,7 @@
 
 <h2>Comments on <?php echo $photo->filename; ?></h2>
 
-<?php echo output_message($message=''); ?>
+<?php echo output_message($message); ?>
 <div id="comments">
   <?php foreach($comments as $comment): ?>
     <div class="comment" style="margin-bottom: 2em;">
